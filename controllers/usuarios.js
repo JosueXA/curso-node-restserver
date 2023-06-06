@@ -7,7 +7,9 @@ const Usuario = require('../models/usuario');
 
 const usuariosGet = async(req, res = response) => {
 
+  // Declarar el límite de búsqueda por medio de la petición, el límite para realizar el páginador es 5 (usuarios)
   const { limite = 5, desde = 0 } = req.query;
+  // Indica si el usuario que realiza dicha petición está activo, de lo contrario entrará en un error
   const query = { estado: true };
 
   const [ total, usuarios ] = await Promise.all([

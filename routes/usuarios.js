@@ -9,9 +9,10 @@ const {
   tieneRole
 } = require('../middlewares')
 
-// Helpers
+// Helpers usuarios
 const { esRoleValido, correoExiste, existeUsuarioPorId } = require('../helpers/db-validators');
-// Controllers
+
+// Controllers usuarios
 const { 
   usuariosGet,
   usuariosPost,
