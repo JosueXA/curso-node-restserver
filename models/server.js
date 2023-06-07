@@ -3,6 +3,7 @@ const cors = require('cors');
 const fileUpload = require('express-fileupload');
 
 const { dbConnection } = require('../database/config');
+const { create } = require('./categoria');
 
 class Server {
 
@@ -48,7 +49,8 @@ class Server {
     // Fileupload - Carga de archivos
     this.app.use( fileUpload({
       useTempFiles : true,
-      tempFileDir : '/tmp/'
+      tempFileDir : '/tmp/',
+      createParentPath: true
     }));
   }
 
